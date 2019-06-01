@@ -13,3 +13,7 @@ As the output of this operation is included in the repo, you shouldn't have to r
 This uses the "Palm.stl" file from https://www.thingiverse.com/thing:3205209/files (not included in this repo) and the icon-holder.stl from the previous script to produce a variation on the 
 
 Transforms are specified here for this iteration of the Infinity Gauntlet, but the same technique may be used with other models as well: just change the transformations appropriately to the center of the slot you want to put the icon from your Magic Band into.
+
+## magic-band-icon.scad and superellipse.scad
+
+These are a couple of my abortive attempts to make the icon-holder part of this model in OpenSCAD, by modeling the Magic Band icon parametrically, before chumping out and using a (tweaked) pre-existing model.
