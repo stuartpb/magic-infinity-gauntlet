@@ -1,8 +1,15 @@
+palmScale = .8;
+
 module palmBase() {
   color("gold")
+    scale(palmScale)
     rotate([11,1,0])
     translate([-3.75,-238.4,-44.9])
-    import("Palm_remeshed.stl", convexity = 5);
+    union () {
+      import("Palm_remeshed.stl", convexity = 5);
+      translate([55,173,108]) rotate([-83.5,-0,0]) scale(1.1)
+        import("ThumbShieldBase_remeshed.stl", convexity = 5);
+    }
 }
 
 module magicPalm () {
@@ -24,9 +31,9 @@ module discPalmBase () {
 }
 
 module discBase (tol = 0) {
-  union () {
+  scale(palmScale) union () {
     scale([0.995,1.02,1]) cylinder(d=40+tol, h=10);
-    translate([0,0,-10]) scale([30+tol,40+tol,1]) cylinder(d=1, h=15);
+    translate([0,0,-10]) scale([30*(1/palmScale)+tol,40+tol,1]) cylinder(d=1, h=15);
   }
 }
 
@@ -51,7 +58,8 @@ module discTestPiece () {
   }
 }
 
-magicPalm();
+palmBase();
+//magicPalm();
 //tolTestPiece();
 //palmDiscOut();
 //palmDiscPart();
